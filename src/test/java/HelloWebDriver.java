@@ -7,16 +7,10 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class HelloWebDriver {
     public static void main(String[] args) throws InterruptedException {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please, enter the size:");
-        float size = scanner.nextInt();
-        System.out.println(size);
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.adidas.com/us");
 
@@ -35,6 +29,10 @@ public class HelloWebDriver {
         WebElement closeButton = driver.findElement(By.className("gl-modal__close"));
         Thread.sleep(2000);
         closeButton.click();
+
+        WebElement ButtonClearSearch = driver.findElement(By.className("btn-clear-search___1iq5p"));
+        Thread.sleep(1000);
+        ButtonClearSearch.click();
 
         WebElement sizeButton = driver.findElement(By.xpath("//*[@id=\"filters-panel\"]/div/div[1]"));
         Thread.sleep(2000);
@@ -59,10 +57,6 @@ public class HelloWebDriver {
         WebElement viewBag = driver.findElement(By.xpath("/html/body/div[2]/div/div[2]/div[2]/div/div/div[2]/div/section/div[3]/a[1]"));
         Thread.sleep(2000);
         viewBag.click();
-
-        WebElement ButtonClearSearch = driver.findElement(By.className("btn-clear-search___1iq5p"));
-        Thread.sleep(1000);
-        ButtonClearSearch.click();
 
         Thread.sleep(2000);
         driver.quit();
