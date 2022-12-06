@@ -19,7 +19,7 @@ public class AdidasTest {
     }
 
     @Test
-    public void addItemToCartTest() {
+    public void addToFavoriteTest() {
         boolean isAddedToFavorite = new SeleniumAddToFavoritePage(driver)
                 .openPage()
                 .addToFavorite()

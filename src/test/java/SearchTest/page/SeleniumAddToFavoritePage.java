@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class SeleniumAddToFavoritePage extends AbstractPage{
     public static String ADIDAS_WISHLIST_PAGE_URL = "https://www.adidas.com/us";
 
-    @FindBy(xpath = "//*[@id=\"main-content\"]/div[8]/section/div[2]/section/div[2]/div/div[2]/div/div/div/div[1]/section/div/div/div/div/div/div")
+    @FindBy(xpath =  "//*[@id=\"main-content\"]/div[9]/section/div[2]/section/div[2]/div/div[2]/div/div/div/div[1]/section/div/div/div/div/div/div")
     private WebElement addToFavoriteButton;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div/div[1]/div[1]/div/div/div[1]/div[2]/div[3]/div/div[2]/div[3]/a")
+    @FindBy(xpath = "/html/body/div[2]/div/div[1]/div[1]/div/div/div[1]/div[2]/div[3]/div/div[2]/div[3]")
     private WebElement wishlistWindow;
 
     public SeleniumAddToFavoritePage(WebDriver driver) {
@@ -22,14 +22,14 @@ public class SeleniumAddToFavoritePage extends AbstractPage{
 
     public SeleniumAddToFavoritePage addToFavorite() {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"main-content\"]/div[8]/section/div[2]/section/div[2]/div/div[2]/div/div/div/div[1]/section/div/div/div/div/div/div")));
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"main-content\"]/div[9]/section/div[2]/section/div[2]/div/div[2]/div/div/div/div[1]/section/div/div/div/div/div/div")));
         addToFavoriteButton.click();
         return this;
     }
 
     public boolean isFavoriteWindowDisplayed(){
         WebElement wishlistWindow = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"app\"]/div/div[1]/div[1]/div/div/div[1]/div[2]/div[3]/div/div[2]/div[3]/a")));
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div/div[1]/div[1]/div/div/div[1]/div[2]/div[3]/div/div[2]/div[3]")));
         return wishlistWindow.isDisplayed();
     }
 
