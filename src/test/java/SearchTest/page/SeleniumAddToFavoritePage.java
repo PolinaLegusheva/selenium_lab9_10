@@ -23,7 +23,6 @@ public class SeleniumAddToFavoritePage extends AbstractPage{
     public SeleniumAddToFavoritePage addToFavorite() {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"main-content\"]/div[9]/section/div[2]/section/div[2]/div/div[2]/div/div/div/div[1]/section/div/div/div/div/div/div")));
-        addToFavoriteButton.click();
         return this;
     }
 

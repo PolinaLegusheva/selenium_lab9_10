@@ -1,0 +1,7 @@
+userName: polinalegusheva_5iW1YE
+accessKey: G9F9oF6SypBv538GeEp3
+platforms:
+  - os: Windows
+    osVersion: 10
+    browserName: Chrome
+    browserVersion: 107.0

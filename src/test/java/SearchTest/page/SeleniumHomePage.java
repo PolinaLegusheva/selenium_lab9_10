@@ -22,6 +22,7 @@ public class SeleniumHomePage extends AbstractPage{
     @FindBy(className = "searchinput___19uW0")
     private WebElement searchEnter;
 
+
     public SeleniumHomePage(WebDriver driver) {
         super(driver);
     }
