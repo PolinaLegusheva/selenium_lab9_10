@@ -17,7 +17,7 @@ public class ProductPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(className = "secondary") //я пыталась сами по сиэсэсу делай касруга
+    @FindBy(className = "secondary")
     WebElement addToCartButton;
 
     @FindBy(xpath = "//a[@href='/cart/']")
