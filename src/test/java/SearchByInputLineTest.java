@@ -16,13 +16,11 @@ import static swisstime.pages.constatnts.PagesURL.*;
 
 public class SearchByInputLineTest {
     WebDriver driver;
-
     @BeforeTest
     public void driverTest(){
         driver = new ChromeDriver();
         WebDriverManager.chromedriver().setup();
         driver.manage().window().maximize();
-
     }
     @Test
     public void testAdditionToCart() throws InterruptedException {
@@ -36,7 +34,6 @@ public class SearchByInputLineTest {
 
         Assert.assertTrue(res.toUpperCase(Locale.ROOT).contains(expectedText));
     }
-
     @AfterTest
     public void closeDriver(){
         driver.quit();

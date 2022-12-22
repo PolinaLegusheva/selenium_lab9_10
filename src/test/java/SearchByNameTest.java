@@ -11,6 +11,7 @@ import static swisstime.pages.constatnts.NamesConsts.*;
 import static swisstime.pages.constatnts.PagesURL.*;
 
 public class SearchByNameTest{
+
     WebDriver driver;
 
     @BeforeTest
@@ -27,7 +28,7 @@ public class SearchByNameTest{
         catalogPage.putProductInCart().closePopUp().checkCart();
         String result = catalogPage.checkCartStatus();
 
-        Assert.assertEquals(result, EMPTY_CART.contains(result));
+        Assert.assertTrue(EMPTY_CART.contains(result));
     }
 
     @AfterTest
