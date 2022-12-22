@@ -27,8 +27,7 @@ public class CatalogPage extends AbstractPage {
     }
 
     public String getTextFromTitle() throws InterruptedException {
-        Thread.sleep(5000);
-        return catalogTitle.getText();
+        return driver.getCurrentUrl();
     }
 
     public CatalogPage putProductInCart(){
