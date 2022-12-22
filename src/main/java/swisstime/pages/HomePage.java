@@ -13,11 +13,15 @@ public class HomePage extends AbstractPage{
         super(webDriver);
     }
 
+    @FindBy(id = "glass-gdpr-default-consent-accept-button")
+    WebElement cookies;
+
     @FindBy(className = "searchinput___19uW0")
     WebElement searchButton;
 
 
    public HomePage enterNameOfSearch(String line){
+       cookies.click();
        searchButton.click();
        wait.until(ExpectedConditions.elementToBeClickable(searchButton));
        searchButton.sendKeys(line, Keys.ENTER);

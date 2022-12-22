@@ -12,12 +12,14 @@ import static swisstime.pages.constatnts.PagesURL.*;
 
 public class SearchByNameTest{
     WebDriver driver;
+
     @BeforeTest
     public void driverTest(){
         driver = new ChromeDriver();
         WebDriverManager.chromedriver().setup();
         driver.manage().window().maximize();
     }
+
     @Test
     public void testik(){
         driver.get(CATALOG_PAGE);
@@ -25,13 +27,11 @@ public class SearchByNameTest{
         catalogPage.putProductInCart().closePopUp().checkCart();
         String result = catalogPage.checkCartStatus();
 
-        Assert.assertTrue(EMPTY_CART.contains(result));
-
+        Assert.assertEquals(result, EMPTY_CART.contains(result));
     }
+
     @AfterTest
     public void closeDriver(){
         driver.quit();
     }
-
-
 }
